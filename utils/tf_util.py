@@ -14,6 +14,19 @@ from object_detection.utils import label_map_util
 from object_detection.utils import visualization_utils as vis_util
 
 
+import six.moves.urllib as urllib
+import sys
+import tarfile
+
+import zipfile
+
+from collections import defaultdict
+from io import StringIO
+
+
+from IPython.display import display
+
+
 def load_model(model_name):
     base_url = 'http://download.tensorflow.org/models/object_detection/'
 
@@ -144,7 +157,7 @@ def output_to_abs(image_dict, output_dict):
 
 # Init index on load
 # github = os.environ['github']
-# PATH_TO_LABELS = os.path.join(github,
-#                               'tf_object_detection_api/models/research/object_detection/data/mscoco_label_map.pbtxt')
-PATH_TO_LABELS = "https://github.com/tensorflow/models/blob/master/research/object_detection/data/mscoco_label_map.pbtxt"
+
+# PATH_TO_LABELS = os.path.join(github,            'tf_object_detection_api/models/research/object_detection/data/mscoco_label_map.pbtxt')
+PATH_TO_LABELS = '/Users/saravana/Documents/Work/Projects/Bird_Detection/models/research/object_detection/data/mscoco_label_map.pbtxt'
 category_index = label_map_util.create_category_index_from_labelmap(PATH_TO_LABELS, use_display_name=True)
