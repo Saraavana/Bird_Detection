@@ -1,0 +1,12 @@
+
+
+# For mac
+.DS_Store
+
+# Midas small model
+midas/
+
+# Directories
+wandb/
+csv_and_json/
+trained_models/
